@@ -1,0 +1,7 @@
+.idea
+node_modules
+/public/node_modules
+/meetupcache/*
+.DS_Store
+/**/.DS_Store
+npm-debug.log

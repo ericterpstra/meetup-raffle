@@ -1,0 +1,51 @@
+{
+  "name": "meetupRaffle",
+  "version": "0.1.0",
+  "main": "app/main.js",
+  "devDependencies": {
+    "6to5ify": "*",
+    "browserify": "*",
+    "browserify-shim": "*",
+    "debowerify": "*",
+    "grunt": "*",
+    "grunt-autoprefixer": "*",
+    "grunt-browser-sync": "*",
+    "grunt-browserify": "*",
+    "grunt-concurrent": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-sass": "*",
+    "grunt-shell": "*",
+    "grunt-watchify": "*",
+    "uglifyify": "*",
+    "watchify": "*"
+  },
+  "scripts": {
+    "start": "watchify -o assets/js/build.js -v -d ."
+  },
+  "browser": {
+    "jquery": "./bower_components/jquery/dist/jquery.js"
+  },
+  "browserify-shim": {
+    "jquery": "$"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "6to5ify",
+        {
+          "sourceMapRelative": "./"
+        }
+      ],
+      "debowerify",
+      "browserify-shim"
+    ]
+  },
+  "dependencies": {
+    "6to5": "*",
+    "es5-shim": "*",
+    "qwest": "^1.5.4",
+    "random-js": "^1.0.4",
+    "react": "^0.12.2",
+    "reqwest": "^1.1.5"
+  }
+}
