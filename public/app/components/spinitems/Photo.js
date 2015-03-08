@@ -4,7 +4,6 @@ var TweenMax = require('gsap');
 var Photo = React.createClass({
 
     getStyle : function(i) {
-        //let o = -(360/this.props.numItems) * i;
         let o = this.props.angle;
         let a = this.props.inradius;
 
@@ -31,7 +30,7 @@ var Photo = React.createClass({
     render: function() {
         return (
             <div ref='photocontainer' className='photo' style={this.getStyle(this.props.index)}>
-                <div className='photo-contain'>
+                <div ref='photo' className='photo-contain'>
                     <div className='caption'><p>{this.props.caption}</p></div>
                     <img src={this.props.src} />
                 </div>

@@ -18,7 +18,6 @@ app.get('/meetup', function(req, res) {
     // Check cache for file with same name as meetupId
     fs.exists(filePath, function(fileExists){
 
-
         // and has mTime within 15 minutes of now...
         fs.stat(filePath, function(err, stats){
             var diff = 9999;
@@ -32,11 +31,7 @@ app.get('/meetup', function(req, res) {
             } else {
                 returnCachedFile(filePath, res);
             }
-
-
         });
-
-
     });
 
 });
@@ -52,7 +47,7 @@ function doMeetupRequest(meetupId, filePath, res) {
         .end(function(meetupResults){
             if(meetupResults.ok){
                 fs.writeFile(filePath, meetupResults.text, function(err) {
-                    console.log("Sending Data directly From Meetup!");
+                    //console.log("Sending Data directly From Meetup!");
                     res.json(meetupResults.body);
                 });
             } else {
@@ -67,14 +62,14 @@ function returnCachedFile(filePath, res) {
             res.send('error reading file');
 
         } else {
-            console.log('Sending Data from Cached File!!');
+            //console.log('Sending Data from Cached File!!');
             res.json(JSON.parse(data));
         }
     });
 }
 
 app.get('/meetups', function(req, res) {
-    var startTime = moment().subtract(2,'days').unix() * 1000;
+    var startTime = moment().subtract(3,'days').unix() * 1000;
     var endTime = moment().add(8,'days').unix() * 1000;
     request
         .get('https://api.meetup.com/2/events')

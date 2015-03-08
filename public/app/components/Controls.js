@@ -24,7 +24,9 @@ var Controls = React.createClass({
 
                 <div>
                     <label>Photo Size: </label>
-                    <input type='number'
+                    <input type='range'
+                           min='50'
+                           max='250'
                            value={this.props.lengthOfSide}
                            onChange={this.props.onChangeLengthOfSide}
                            step='10' />

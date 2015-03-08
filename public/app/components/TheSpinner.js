@@ -51,7 +51,6 @@ var TheSpinner = React.createClass({
 
         return (
             <div className='photospinner'>
-                <div className='pointer'>↓</div>
 
                 <div className='photocontainer' style={this.getContainerStyle()}>
                     <div ref='spinner' className='photoset' style={this.getPhotosetStyle()}>
@@ -93,7 +92,7 @@ var TheSpinner = React.createClass({
         let spinner = this.refs.spinner.getDOMNode();
         let winnerIndex = r.integer(0, this.props.spinnerItems.length-1);
         let winnerAngle = this.props.spinnerItems[winnerIndex].angle;
-        let rotation = (360 + (360-winnerAngle)) + 'deg';
+        let rotation = '+=' + (720 + (360-winnerAngle)) + 'deg';
 
         TweenMax.set(spinner, {
             rotationX:0,
