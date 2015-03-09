@@ -43,6 +43,7 @@
   "dependencies": {
     "6to5": "*",
     "es5-shim": "*",
+    "gsap": "^1.16.0",
     "qwest": "^1.5.4",
     "random-js": "^1.0.4",
     "react": "^0.12.2",

@@ -1,10 +1,10 @@
 var express = require('express');
 var request = require('superagent');
 var moment = require('moment');
-var Promise = require('bluebird');
+//var Promise = require('bluebird');
 var fs = require('fs');
 
-Promise.promisifyAll(fs);
+//Promise.promisifyAll(fs);
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
