@@ -15,7 +15,12 @@ var SpinnerApp = React.createClass({
         MeetupLoader.fetchMemtechEvents(function(response){
             this.setState({
                 meetups : response
-            })
+            });
+
+            if ( response.length ) {
+               this.fetchMeetup(response[0].id)
+            }
+
         }.bind(this));
     },
 

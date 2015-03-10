@@ -69,7 +69,7 @@ function returnCachedFile(filePath, res) {
 }
 
 app.get('/meetups', function(req, res) {
-    var startTime = moment().subtract(3,'days').unix() * 1000;
+    var startTime = moment().subtract(1,'days').unix() * 1000;
     var endTime = moment().add(8,'days').unix() * 1000;
     request
         .get('https://api.meetup.com/2/events')

@@ -16,6 +16,7 @@
 //plane
 .photo {
     position: absolute;
+    -webkit-font-smoothing:antialiased;
 
     .photo-contain {
         width: 100%;
@@ -23,6 +24,7 @@
         position: relative;
         overflow: hidden;
     }
+    /*
 
     &:before {
         content: '';
@@ -36,6 +38,7 @@
         opacity: 1;
         background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 70%);
     }
+    */
 
     img {
         max-height: 100%;

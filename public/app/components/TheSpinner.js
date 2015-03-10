@@ -20,7 +20,7 @@ var TheSpinner = React.createClass({
         }
     },
 
-    componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps : function(nextProps) {
         let numberOfSides = nextProps.spinnerItems.length;
         let lengthOfSide = 100;
         let inradius = this.getInradius(lengthOfSide, numberOfSides, this.gapWidth);
@@ -33,7 +33,6 @@ var TheSpinner = React.createClass({
             winner: -1
         });
     },
-
 
     render: function() {
 
@@ -52,7 +51,7 @@ var TheSpinner = React.createClass({
         return (
             <div className='photospinner'>
 
-                <div className='photocontainer' style={this.getContainerStyle()}>
+                <div ref='photocontainer' className='photocontainer' style={this.getContainerStyle()}>
                     <div ref='spinner' className='photoset' style={this.getPhotosetStyle()}>
                         {photos}
                     </div>
@@ -92,13 +91,14 @@ var TheSpinner = React.createClass({
         let spinner = this.refs.spinner.getDOMNode();
         let winnerIndex = r.integer(0, this.props.spinnerItems.length-1);
         let winnerAngle = this.props.spinnerItems[winnerIndex].angle;
-        let rotation = '+=' + (720 + (360-winnerAngle)) + 'deg';
+        let rotation =  (720 + (360-winnerAngle)) + 'deg';
+
 
         TweenMax.set(spinner, {
-            rotationX:0,
+            rotationY:0,
             onComplete: function() {
                 TweenMax.to(spinner, 2, {
-                    rotationX:rotation,
+                    rotationY:rotation,
                     ease:Back.easeOut,
                     onComplete: function() {
                         this.setState({
@@ -108,6 +108,7 @@ var TheSpinner = React.createClass({
                 });
             }.bind(this)
         });
+
     },
 
     onChangeLengthOfSide: function(e) {
