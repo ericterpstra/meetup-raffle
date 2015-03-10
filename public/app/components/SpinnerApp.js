@@ -34,9 +34,9 @@ var SpinnerApp = React.createClass({
 
     render : function() {
         return (
-            <div>
-                <TheSpinner spinnerItems={this.state.data} fetchMeetup={this.fetchMeetup} meetups={this.state.meetups} />
-            </div>
+
+            <TheSpinner spinnerItems={this.state.data} fetchMeetup={this.fetchMeetup} meetups={this.state.meetups} />
+
         );
     }
 });

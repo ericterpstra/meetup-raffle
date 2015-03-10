@@ -23,12 +23,16 @@ var Photo = React.createClass({
         //this.setRotation();
         if (this.props.index == nextProps.winner) {
             let winner = this.refs.photocontainer.getDOMNode();
+            let winnerp = this.refs.photo.getDOMNode();
             TweenMax.to(winner, 1, {
                 scale: '1.5',
-                ease: Bounce.easeOut,
+
                 onComplete: function() {
                     this.reverse();
                 }
+            });
+            TweenMax.to(winnerp,2, {
+               rotationZ: '360deg'
             });
         }
     },

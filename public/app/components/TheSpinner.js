@@ -7,7 +7,7 @@ var TweenMax = require('gsap');
 
 var TheSpinner = React.createClass({
 
-    gapWidth: 10,
+    gapWidth: 50,
 
     photos: [],
 
@@ -70,7 +70,7 @@ var TheSpinner = React.createClass({
 
     getContainerStyle : function() {
         return {
-            perspectiveOrigin : '50% 180px',
+            perspectiveOrigin : '50% 50%',
             perspective : (this.state.inradius * 2) + 'px'
         }
     },
