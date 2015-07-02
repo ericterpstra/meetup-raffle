@@ -20,7 +20,7 @@
     "watchify": "*"
   },
   "scripts": {
-    "start": "watchify -o assets/js/build.js -v -d ."
+    "start": "watchify --poll=100 -o assets/js/build.js -v -d ."
   },
   "browser": {
     "jquery": "./bower_components/jquery/dist/jquery.js"

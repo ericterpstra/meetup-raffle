@@ -15,21 +15,20 @@ var TheSpinner = React.createClass({
         return {
             numberOfSides : 1,
             inradius: 1,
-            lengthOfSide: 1,
+            lengthOfSide: 120,
             winner: -1
         }
     },
 
     componentWillReceiveProps : function(nextProps) {
         let numberOfSides = nextProps.spinnerItems.length;
-        let lengthOfSide = 100;
+        let lengthOfSide = this.state.lengthOfSide;
         let inradius = this.getInradius(lengthOfSide, numberOfSides, this.gapWidth);
         let num = nextProps.spinnerItems.length;
 
         this.setState({
             numberOfSides : nextProps.spinnerItems.length,
             inradius: inradius,
-            lengthOfSide: lengthOfSide,
             winner: -1
         });
     },
